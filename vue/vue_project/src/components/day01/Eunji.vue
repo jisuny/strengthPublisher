@@ -1,10 +1,10 @@
 <template>
-    <p>공부시작</p>
+    <h1>Title h1</h1>
 </template>
 
 <script>
 export default {
-  
+    name: 'EjTest',
 }
 </script>
 
