@@ -3,5 +3,5 @@
 // node_modules 리포지토리 푸시 대신, readme로 안내
 
 1. clone your repository
-2. run "npm -i"
+2. run "npm i"
 3. ng serve
