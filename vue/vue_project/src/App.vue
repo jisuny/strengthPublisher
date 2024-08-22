@@ -1,10 +1,9 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="뷰 프로젝트 시작"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './pages/main01/HelloWorld.vue'
 
 export default {
   name: 'App',
