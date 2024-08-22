@@ -1,5 +1,5 @@
 <template>
-  <HelloWorld msg="뷰 프로젝트 시작"/>
+  <HelloWorld/>
 </template>
 
 <script>
