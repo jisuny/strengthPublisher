@@ -1,19 +1,23 @@
 <template>
   <HelloWorld/>
+  <hr />
+  <lifeCycle/>
 </template>
 
 <script>
 import HelloWorld from './pages/main01/HelloWorld.vue'
+import lifeCycle from './pages/main02/lifeCycle.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    lifeCycle
   }
 }
 </script>
 
-<style>
+<style lang="scss">
 @import './assets/scss/_reset.scss';
 
 #app {
@@ -23,5 +27,12 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  hr{
+    margin:30px 0;
+  }
+  h2{
+    margin-bottom:20px;
+    color:#464646;
+  }
 }
 </style>

@@ -1,4 +1,5 @@
-<template>  
+<template>
+  <h2>Day 01 - 버튼 컴포넌트 만들어보기 <br> <sub>props [부모 -> 자식 값 전달]</sub></h2>
   <div>
     <JiTest
       :msg="'TextButton'"
