@@ -4,22 +4,26 @@
       :msg="'TextButton'"
       :subMsg="'Sub Title'"
      />
-    <EjTest />
+    <BtnEj :btn_tit="btn_tit" :btn_p="btn_p"/>
+    <!-- <BtnEj :btn_txt_wrap="btn_txt_wrap"/> -->
   </div>
 </template>
 
 <script>
 import JiTest from '../../components/day01/JiseonTxt.vue';
-import EjTest from '../../components/day01/Eunji.vue';
+import BtnEj from '../../components/day01/Eunji.vue';
 
 export default {
   components: {
     JiTest,
-    EjTest
+    BtnEj 
   },
   data(){
     return{
-
+      btn_tit: 'Button text',
+      btn_p: 'Secondary label',
+      // btn_txt_wrap: '<h3 style="color:#f9eef1;text-align:left;">Button text</h3> <p style="color:#cec4c7;">Secondary label</p>'
+      //html 바인딩하니 메인 scss 먼저 먹힘
     }
   },
 }
