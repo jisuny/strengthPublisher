@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Day 02 - 라이프 사이클 익히기 <br> <sub>vue3 기준</sub></h2>
-    <img src="../../assets/images/day02/vue3_life_sycle.webp" alt="라이프 사이클 이미지">
+  <img src="../../assets/images/day02/vue3_life_sycle.webp" alt="라이프 사이클 이미지">
     <JiLife />
     <EjLife />
   </div>
