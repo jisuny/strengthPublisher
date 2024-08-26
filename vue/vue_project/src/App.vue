@@ -1,18 +1,25 @@
 <template>
-  <HelloWorld/>
-  <hr />
-  <lifeCycle/>
+  <div>
+    <HelloWorld/>
+    <hr />
+    <lifeCycle/>
+    <hr />
+    <VBind/>
+  </div>
 </template>
 
 <script>
 import HelloWorld from './pages/main01/HelloWorld.vue'
 import lifeCycle from './pages/main02/lifeCycle.vue'
+import VBind from './pages/main03/VBind.vue'
+
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
-    lifeCycle
+    lifeCycle,
+    VBind
   }
 }
 </script>
