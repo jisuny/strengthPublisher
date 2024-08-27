@@ -28,8 +28,9 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style>
 @import './assets/scss/_reset.scss';
+@import './assets/scss/_common.scss';
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -44,6 +45,9 @@ export default {
   h2{
     margin-bottom:20px;
     color:#464646;
+    & + .img_area{
+      margin:0 0 30px;
+    }
   }
 }
 </style>
