@@ -39,15 +39,5 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-  hr{
-    margin:30px 0;
-  }
-  h2{
-    margin-bottom:20px;
-    color:#464646;
-    & + .img_area{
-      margin:0 0 30px;
-    }
-  }
 }
 </style>
