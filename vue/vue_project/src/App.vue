@@ -5,6 +5,8 @@
     <lifeCycle/>
     <hr />
     <VBind/>
+    <hr />
+    <VPropsEmit/>
   </div>
 </template>
 
@@ -12,6 +14,7 @@
 import HelloWorld from './pages/main01/HelloWorld.vue'
 import lifeCycle from './pages/main02/lifeCycle.vue'
 import VBind from './pages/main03/VBind.vue'
+import VPropsEmit from './pages/main04/VPropsEmit.vue'
 
 
 export default {
@@ -19,7 +22,8 @@ export default {
   components: {
     HelloWorld,
     lifeCycle,
-    VBind
+    VBind,
+    VPropsEmit
   }
 }
 </script>
