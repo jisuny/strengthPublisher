@@ -48,7 +48,7 @@
         props: [
             'btn_tit', 
             'btn_p'
-        ]
+        ] //부모(HelloWorld에서 값 받아옴)
         // props: ['btn_txt_wrap']
     };
     
@@ -79,6 +79,7 @@
             color:#342f31;
         }
         .btn_txt_wrap {
+            text-align: left;
             h3{
                 font-size:24px;
                 font-weight:bold;

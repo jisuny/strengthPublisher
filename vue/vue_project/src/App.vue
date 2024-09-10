@@ -8,8 +8,6 @@
     <hr />
     <VPropsEmit/>
     <hr />
-    <VProps/>
-    <hr />
     <TodoClone/>
   </div>
 </template>
@@ -19,7 +17,6 @@ import HelloWorld from './pages/main01/HelloWorld.vue'
 import lifeCycle from './pages/main02/lifeCycle.vue'
 import VBind from './pages/main03/VBind.vue'
 import VPropsEmit from './pages/main04/VPropsEmit.vue'
-import VProps from './pages/main04/VProps.vue'
 import TodoClone from './pages/main05/TodoClone.vue'
 
 export default {
@@ -29,7 +26,6 @@ export default {
     lifeCycle,
     VBind,
     VPropsEmit,
-    VProps,
     TodoClone,
   }
 }

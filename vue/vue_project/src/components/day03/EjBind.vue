@@ -168,4 +168,10 @@
         
     }
 }
+
+@media(max-width:767px) {
+    .binding_wrap {
+        .container {width: 90%;margin:0 auto;}
+    }
+}
 </style>
