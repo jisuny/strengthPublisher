@@ -13,9 +13,11 @@
         <div class="img_area">
             <img src="../../assets/images/day04/day04_props_emit.png" alt="props와 emit">
         </div>
-
+        
+        <!-- Ej start -->
         <div class="ejArea">
             <h3 class="h3_ej">== EJ_Props/Emit ==</h3>
+
             <!-- <div class="event_state">
                 <EventView 
                 :event="eventName" 
@@ -23,7 +25,7 @@
                 />                 -->
                 <!-- @자식 컴포넌트에서 보낸 함수명="부모에서 받는 메서드 명" -->
                 <!-- {{ Msg }}
-            </div> -->
+            </div> --> <!-- EjChildren.vue 요소 -->
 
             <div class="area area_p">
                 <div class="text text_p">
@@ -31,7 +33,6 @@
                 </div>
                 <button 
                 class="btn btn_p"
-                @click="changeCtext"
                 >
                 <!-- //자.vue에서 정의한 props 이름인 changeTextC에 data 변수명 changeC정의 -->
                 changeC
@@ -39,13 +40,10 @@
             </div>
             <AreaChild
             @changePtext="receiveBtnC"
-            :TextC="changeCtext" 
             />
-            <!-- :TextC="TextC" //하위컴포넌트바인드 -->
-            <!-- @changePtext : 자식 vue에서 받아옴 -->
             <!-- 받는 부분X 받아오는 컴포넌트에 v-on 값 붙여야 작동 -->
-            <!-- :TextC -> 자식 vue에 전달 값 -->
         </div>
+        <!-- Ej -->
     </div>
 </template>
 
@@ -56,33 +54,49 @@ import AreaChild from '../../components/day04/EjChildren02.vue';
 export default {
     //** components 지역등록**
     components: {
-        // EventView,
+        // Ej start======================================
+
+        // EventView, --> EjChildren.vue
         AreaChild,
+
+        //======================================== Ej end
     },
     data(){
         return{
+            // Ej start======================================
+            
             // eventName:'20주년 맞이 고객 감사 이벤트',
-            // Msg:'',
+            // Msg:'', --> EjChildren.vue
 
             TextP:'ParentTextArea',
+            //======================================== Ej end
+
         };
     },
     methods: {
+        // Ej start======================================
+
         // receiveMsg(Msg){
         //     this.Msg=Msg; 
         //     //자식에서 보낸 데이터를 receiveMsg에 담아, 부모파일의 {{Msg}}에 매핑해 화면 반영
-        // },
+        // }, --> EjChildren.vue
+
         receiveBtnC(TextP){
             this.TextP=TextP;
         },
-        changeCtext(){
-            this.props('TextC','Click Parent Btn')
-        }
+        // changeCtext(){
+        //     this.props('TextC','Click Parent Btn')
+        // }
+
+        //======================================== Ej end
+
     },
 };
 </script>
 
 <style lang="scss">
+    // Ej start======================================
+
     .h3_ej {margin-top:100px;}
     .event_state {
         margin: 120px auto 200px;
@@ -116,6 +130,8 @@ export default {
             &_p {background: #f9eef1;}
             &_c {background: #f1e0ff;}
         }
-    }
-    
+    } 
+
+    //======================================== Ej end
+
 </style>
