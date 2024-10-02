@@ -7,8 +7,8 @@
     <VBind/>
     <hr />
     <VPropsEmit/>
-    <hr />
-    <TodoClone/>
+    <!-- <hr />
+    <TodoClone/> -->
     <a 
     href="https://url.kr/jeteg6" 
     target="_blank" 
@@ -27,7 +27,7 @@ import HelloWorld from './pages/main01/HelloWorld.vue'
 import lifeCycle from './pages/main02/lifeCycle.vue'
 import VBind from './pages/main03/VBind.vue'
 import VPropsEmit from './pages/main04/VPropsEmit.vue'
-import TodoClone from './pages/main05/TodoClone.vue'
+// import TodoClone from './pages/main05/TodoClone.vue'
 
 export default {
   name: 'App',
@@ -36,7 +36,7 @@ export default {
     lifeCycle,
     VBind,
     VPropsEmit,
-    TodoClone,
+    // TodoClone,
   }
 }
 </script>
