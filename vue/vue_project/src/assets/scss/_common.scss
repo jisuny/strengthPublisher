@@ -55,8 +55,40 @@ p{
   &.figma{
     >span{
       &::before{
-        background:url('../images/common/ico_figma.png') #fff no-repeat center / cover;
+        background:url('./assets/images/common/ico_figma.png') #fff no-repeat center / cover;
       }
+    }
+  }
+}
+
+.link_btn {
+  display:block;
+  width:90%;height:auto;
+  border-radius:12px;
+  cursor:pointer;
+  text-align:left;
+  font-weight:bold;
+  color:#FFF !important;
+  padding:50px 60px;
+  margin:50px auto;
+
+  &.western {
+    background:url('./assets/images/common/main_visual.png') no-repeat center/cover;
+    span {
+      font-size:15px;
+      opacity:0.6;
+    }
+    p {
+      color:#FFF;
+      font-size:26px;
+      margin:23px 0 32px;
+      text-shadow:1px 1px 1px rgba(0,0,0,0.5);
+    }
+    em {
+      font-style:normal;
+      font-size:15px;
+      color:#2B78C2;
+      text-shadow:2px 1px 3px rgba(255,255,255,0.4);
     }
   }
 }

@@ -9,6 +9,16 @@
     <VPropsEmit/>
     <hr />
     <TodoClone/>
+    <a 
+    href="https://url.kr/jeteg6" 
+    target="_blank" 
+    title="새창열림"
+    class="link_btn western"
+    >
+      <span>Global leader in eco-friendly energy</span>
+      <p>새로운 시대를 여는 <br>친환경 에너지 글로벌 리더</p>
+      <em>WP PTS 바로가기 &gt;</em>
+    </a>
   </div>
 </template>
 
@@ -31,7 +41,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 @import './assets/scss/_reset.scss';
 @import './assets/scss/_common.scss';
 
