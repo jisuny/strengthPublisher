@@ -2,8 +2,8 @@
   <div class="wrapper">
     <WpHeader/>
     <!-- 추후 메뉴에 따른 content -->
-    <!-- <router-view/> 09.26 라우터 연결 확인하기! -->
-    <WpContent/>
+    <router-view/>
+    <!-- <WpContent/> -->
     <WpFooter/>
   </div>
 </template>
@@ -12,13 +12,13 @@
 
 import WpHeader from './components/WpHeader.vue'
 import WpFooter from './components/WpFooter.vue'
-import WpContent from './views/contentM.vue'
+// import WpContent from './views/contentM.vue'
 
 export default {
   components: {
     WpHeader,
     WpFooter,
-    WpContent,
+    // WpContent,
   },
 }
 </script>

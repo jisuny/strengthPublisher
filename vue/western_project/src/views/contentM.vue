@@ -68,8 +68,12 @@
                 <div class="tab_area">
                     <div class="tab_title_wrap flex">
                         <ul class="tab_title flex">
-                            <li class="tab_title_tit tab1_title on">자료실</li>
-                            <li class="tab_title_tit tab2_title">공지사항</li>
+                            <li class="tab_title_tit tab1_title on">
+                            자료실
+                            </li>
+                            <li class="tab_title_tit tab2_title">
+                            공지사항
+                            </li>
                         </ul>
                         <div class="btn_more flex">
                             <p>더보기</p>
@@ -92,7 +96,7 @@
                                             <span class="ic_file_area ic_pdf"></span>
                                         </div>
                                     </li>
-                                    <li class="file_han">
+                                    <li class="file_han">                                        
                                         <span>업무</span>
                                         <h3 class="w_space_1">4차 웨이브 프로젝트 제목 및 리더</h3>
                                         <p class="w_space_2">
@@ -103,7 +107,7 @@
                                             <span class="ic_file_area ic_han"></span>
                                         </div>
                                     </li>
-                                    <li class="">
+                                    <li class="">                                        
                                         <span>일반</span>
                                         <h3 class="w_space_1">PTS 시스템 중지 사항</h3>
                                         <p class="w_space_2">
@@ -265,24 +269,15 @@
 </template>
 
 <script>
-export default {
-    
-}
+    export default {
 
-// $(function(){
-//     $('.tab_title > li').on('click',function(){
-//         var $this=$(this); //자기자신
-//         var idx=$(this).index(); //자기자신의 번호
-//         $('.tab_left > div').eq(idx).addClass('on').siblings().removeClass('on');
-//         $this.addClass('on').siblings().removeClass('on');
-//     });
-// })
+    }
 </script>
 
 <style style="scss" scoped>
     /* background-img*/
-    .main_visual {background:url(../assets/img/main/main_visual.png) no-repeat center/cover;}
-    .tab_right {background:url(../assets/img/main/bg_tabBanner.png) no-repeat center/cover;}
+    .main_visual {background:url(@/assets/img/main/main_visual.png) no-repeat center/cover;}
+    .tab_right {background:url(@/assets/img/main/bg_tabBanner.png) no-repeat center/cover;}
     .tab_list li .new {
         padding-left:25px;
         background:url(../assets/img/common/ic_new.png) no-repeat;

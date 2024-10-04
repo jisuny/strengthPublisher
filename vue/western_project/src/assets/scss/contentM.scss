@@ -61,6 +61,7 @@
                         font-size:18px;
                         font-weight:normal;
                         color:#777;
+                        cursor:pointer;
     
                         &.on {
                             color:#000;
@@ -266,7 +267,7 @@
         .pts_schedule {
             margin-top:40px;
             /*하단 다운로드 btn 위치 설정시 필*/
-            margin-bottom:115px;
+            margin-bottom:100px;
 
             &_title {
                 font-size:20px;
