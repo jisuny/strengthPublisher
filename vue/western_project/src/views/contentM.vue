@@ -68,10 +68,18 @@
                 <div class="tab_area">
                     <div class="tab_title_wrap flex">
                         <ul class="tab_title flex">
-                            <li class="tab_title_tit tab1_title on">
+                            <li 
+                            class="tab_title_tit tab1_title"
+                            @click="show_tab01"
+                            :class="{on: tab01}"
+                            >
                             자료실
                             </li>
-                            <li class="tab_title_tit tab2_title">
+                            <li 
+                            class="tab_title_tit tab2_title"
+                            @click="show_tab02"
+                            :class="{on: tab02}"
+                            >
                             공지사항
                             </li>
                         </ul>
@@ -82,7 +90,10 @@
                     </div>
                     <div class="tab_con flex">
                         <div class="tab_left">
-                            <div class="tab tab01 on">
+                            <div 
+                            class="tab tab01"
+                            v-if="tab01" 
+                            >
                                 <ul class="reference_list tab_list flex">
                                     <li class="file_pdf">
                                         <span>일반</span>
@@ -120,7 +131,10 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="tab tab02">
+                            <div 
+                            class="tab tab02"
+                            v-if="tab02"
+                            >
                                 <ul class="notice_list tab_list flex">
                                     <li></li>
                                     <li></li>
@@ -270,6 +284,27 @@
 
 <script>
     export default {
+        data(){
+            return {
+                tab01:true,
+                tab02:false,
+            }
+        },
+
+        methods: {
+            show_tab01(){
+                this.tab01 = true;
+                if(this.tab01){
+                    this.tab02 = false;
+                }
+            },
+            show_tab02(){
+                this.tab02 = true;
+                if(this.tab02){
+                    this.tab01 = false;
+                }
+            }
+        },
 
     }
 </script>
