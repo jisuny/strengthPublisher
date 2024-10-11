@@ -1,76 +1,77 @@
 <template>
-    <div class="inputBox shadow">
-        <!-- newTodoItem -->
-        <input type="text" 
-        v-model="TodoItem"
-        @:keyup.enter="addTodo"
+    <div class="input">
+        <input 
+        class="input_txt"
+        type="text"
+        v-model="newTodoItem"
+        placeholder="To do list"
+        v-on:keypress.enter="addTodo"
         >
-        <!-- @keyup.enter => 엔터키 사용시에도 리스트 추가 -->
-
-        <span 
-        class="addList"
-        @click="addTodo"
+        <!-- v-model: 입력필드 데이터를 뷰 데이터 속성에 연결 -->
+        <!-- @keyup.enter: enter키 감지하여 함수 호출 / @click: 클릭 감지 -->
+        <!-- newTodoItem: 필드 작성된 텍스트를 담는 변수 -->
+        <button 
+        class="input_btn"
+        v-on:click="addTodo"
         >
-            <i class="far fa-plus-square addBtn" aria-hidden="true"></i>
-        </span>
+            <i class="far fa-plus input_btn_ic" aria-hidden="true"></i>
+        </button>
     </div>
 </template>
 
 <script>
 export default {
-    data () {
+    data() {
         return {
-            TodoItem:''
-        }
+            newTodoItem: ""        };
     },
+
     methods: {
-        addTodo: function(){
-            console.log(this.TodoItem);
-            //v-model 내용 저장
-            localStorage.setItem(this.TodoItem, this.TodoItem);
-            this.clearInput();
+        addTodo() {
+            if (this.newTodoItem !== "") {
+                var value = this.newTodoItem && this.newTodoItem.trim();
+                this.$emit("addTodo", value);
+                this.clearInput(); //clearInput 함수처리
+            } else {
+                alert(" 새로운 목록을 추가해주세요 ")
+            }
         },
-        //초기화
-        clearInput: function(){
-            this.TodoItem="";
+        clearInput() {
+            this.newTodoItem = "";
         }
     },
-}
+};
 </script>
 
 <style lang="scss" scoped>
-    .inputBox {
-        background:#FFF;
-        height:50px;
-        line-height:50px;
-        border-radius:5px;
-        display:flex;
-        width:380px;
-        margin:0 auto;
+    .input {
+        margin-bottom:30px;
 
-        input {
-            width:330px;
+        border-radius:18px;
+        width:100%;
+        padding:5px;
+        box-shadow:inset 4px 4px 12px rgba(0,0,0,0.1);
+
+        &_txt {
             outline:none;
-            border:1px solid #555;
-            font-size:15px;
-            padding: 0 20px;
-            color:#555;
-            font-weight:700;
-            text-decoration:underline #f55;
+            border-radius:12px;
+            padding:15px 25px;
+            width:calc(100% - 50px);
+            font-size:18px;
         }
 
-        .addList {
-            // background:linear-gradient(45deg, #6462ea, #a7d4fd);
+        &_btn {
+            width: 46px;height:46px;
+            border-radius:13px;
+            box-shadow:2px 2px 10px rgba(0,0,0,0.25);
+            line-height:52px;
+            background:#f9f9f9;
+            cursor:pointer;
 
-            display:block;
-            width: 50px;
-            border-radius: 0 5px 5px 0;
-            border:1px solid #555;
-            font-size: 22px;
-            line-height:42px;
-            // .addBtn {color:#fff; vertical-align:middle;}
-            .addBtn {color:#555; vertical-align:middle;}
-
+            &_ic {
+                color:#999;
+                font-size:25px;
+            }
         }
     }
 </style>

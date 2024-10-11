@@ -1,45 +1,46 @@
 <template>
-    <div 
-    class="clearAllContainer"
-    >
-        <span 
-        class="clearAllBtn"
-        @click="clearTodo"
+    <div class="footer">
+        <button 
+        class="footer_btn"
+        v-on:click="clearTodo"
         >
-        ClearAll
-        </span>
-    </div>
+            <i class="far fa-trash"></i>
+            Delete All
+        </button>
+    </div>    
 </template>
 
 <script>
 export default {
     methods: {
-        clearTodo: function(){
-            localStorage.clear(); //모든 키 데이터 삭제
-        }
-    }  
+        clearTodo() {
+            this.$emit("removeAll");
+        },
+    },
 }
 </script>
 
 <style lang="scss" scoped>
+    .footer {
+        margin:25px auto 0;
+        text-align:right;
 
-.clearAllContainer {
-    width:46%;
-    margin:100px auto 20px;
-    height:50px;line-height:48px;
-    background:#FFF;
-    border-radius:5px;
+        &_btn {
+            border:none;outline:none;
+            border-radius:12px;
+            width:45%;text-align:center;
+            height:42px;line-height:40px;
+            background:rgba(255, 0, 0, 0.3);
+            color:#fefefe;font-size:14px;
+            transition:0.3s;
+            cursor:pointer;
 
-    position:absolute;
-    bottom:0;left:50%;transform:translateX(-50%);
+            i {margin-right:6px;}
 
-    .clearAllBtn {
-        display:block;
-        color:linear-gradient(45deg, #6462ea, #a7d4fd);
-        font-weight:bold;
-        border-bottom:1px solid #555;
-        border-radius:8px;
+            &:hover {
+            background:rgba(255, 0, 0, 1);  
+            color:#fff;              
+            }
+        }
     }
-}
-
 </style>

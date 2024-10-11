@@ -1,75 +1,128 @@
 <template>
-    <div>
-        <ul class="list_wrap">
+    <div class="list">
+        <!-- <ul class="list_wrap">
             <li 
-            v-for="todoItem in todoItems" 
+            v-for="(todoItem, index) in propsdata" 
             v-bind:key="todoItem"
-            class="list_item"
+            class="list_li"
             >
-                {{ todoItem }}
-                <span 
-                class="removeBtn"
-                @click="removeTodo(todoItem, index)"
+                <input 
+                type="checkbox"
                 >
-                    <i class="fas fa-trash-alt"></i>
-                </span>
+                <span class="list_cont">{{ todoItem }}</span>
+                <button 
+                class="list_delete"
+                v-on:click="removeTodo(todoItem, index)"
+                >
+                    X
+                </button>
             </li>
-        </ul>
+        </ul> -->
+
+        <!-- 동작되면 transition-group 활용! 10.11 -->
+        <transition-group class="list_wrap" name="list" tag="ul">
+          <li 
+            class="list_li"
+            v-for="(todoItem, idx) in propsdata"
+            v-bind:key="todoItem"
+            >
+                <input 
+                type="checkbox"
+                class="ch"
+                >
+                <span class="list_cont">{{todoItem}}</span>
+                <i 
+                class="list_delete"
+                v-on:click="removeTodo(todoItem, idx)"
+                >
+                    <i class="far fa-trash"></i>
+                </i>
+            </li>
+        </transition-group>
     </div>
 </template>
+  
 
 <script>
-
 export default {
-    data() {
-        return {
-            todoItems: []
-        }
-    },
+    props: ["propsdata"],
     methods: {
-        removeTodo: function(todoItem, index) {
-            localStorage.removeItem(todoItem);
-            this.todoItems.splice(index, 1); // 특정 index에서 하나
-        }
+        removeTodo(todoItem, index) {
+            this.$emit("removeTodo", todoItem, index);
+        },
     },
-    created: function() {
-        if (localStorage.length > 0) {
-            for (var i = 0; i < localStorage.length; i ++) {
-                if (localStorage.key(i) !== 'loglevel:webpack-dev-server') { 
-                    this.todoItems.push(localStorage.key(i));
-                } // 키에 데이터쓰기
-            }
-        }
-    }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-    .list_wrap {
-        list-style:none;
-        padding:0;
-        margin:20px auto 0;
-        text-align:left;
-        max-width:340px;
-        max-height:46vh;
-        overflow:scroll;
+    .list{
+        padding:15px 10px;
+        border-radius:18px;
+        box-shadow:inset 5px 4px 12px rgba(0,0,0,0.15);
+        height:450px;
+        overflow-y:auto;
+ 
+       &_li {
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid #fff;
+        padding: 20px 20px;
+        margin-bottom: 10px;
+        border-radius: 18px;
+        box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.25);
 
-        .list_item {
-            display:flex;
-            min-height:50px;
-            height:50px;
-            line-height:46px;
-            margin:10px 0;
-            padding:0 20px;
-            background:#FFF;
-            border-radius:5px;
-            border-bottom:1px dashed #d38787;
-
-            .removeBtn {
-                margin-left:auto;
-                color:#de4343;
+        input {
+            margin-right:10px;
+            outline:none;
+            border:none;
+            &:checked {
+                accent-color:#EC5D57;
             }
-        
         }
+
+        input:checked + span {
+            text-decoration:line-through;
+            opacity:0.4;
+        }
+
+        input:checked + li {opacity:0.6;}
+
+        .list_cont:has(.ch:checked) {
+            opacity:0.3;
+        }
+
+        span {
+            width:70%;
+            word-break:break-word;
+            text-align:left;
+        }
+
+        .list_delete {
+            margin-left:8px;
+            transition:0.3s;
+            color:#EC5D57;
+            border-radius:50%;
+            padding:6px 10px;
+
+            &:hover {
+                transform:scale(1.2);
+                background:rgba(255,0,0,0.2);
+                color:rgba(255,0,0,0.7);
+            }
+        }
+       }
     }
+    // transition-group css 활용 명명
+    .list-enter-active,
+    .list-leave-active {
+        transition: all 1s;
+    }
+    .list-enter,
+    .list-leave-to {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    // 
 </style>

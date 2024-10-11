@@ -1,10 +1,17 @@
 <template>
-    <div class="todo_wrap">
-        <TodoHeaderEj/>
-        <TodoInputEj/>
-        <div class="list_note">
-            <TodoListEj/>
-            <TodoFooterEj/>
+    <div class="todo">
+        <div class="todo_whole">
+            <TodoHeaderEj/>
+            <TodoInputEj
+            v-on:addTodo="addTodo"
+            />
+            <TodoListEj
+            v-bind:propsdata="todoItems"
+            v-on:removeTodo="removeTodo"
+            />
+            <TodoFooterEj
+            v-on:removeAll="clearAll"
+            />
         </div>
     </div>
 </template>
@@ -18,17 +25,48 @@ import TodoFooterEj from '../../components/clone/TodoFooterEj.vue'
 export default {
     components:{
         TodoHeaderEj,
-        TodoInputEj,
         TodoListEj,
+        TodoInputEj,
         TodoFooterEj
-    }
+    },
+
+    data() {
+        return {
+            todoItems: []
+        };
+    },
+    
+    methods: {
+        clearAll() {
+            localStorage.clear();
+            this.todoItems = [];
+        },
+        addTodo(todoItem) {
+            localStorage.setItem(todoItem, todoItem);
+            this.todoItems.push(todoItem);
+        },
+        removeTodo(todoItem, index) {
+            localStorage.removeItem(todoItem);
+            this.todoItems.splice(index, 1);
+        }
+    },
+
+    created() {
+        if (localStorage.length > 0) {
+            for (var i = 0; i < localStorage.length; i++) {
+                this.todoItems.push(localStorage.key(i));
+            }
+        }
+    },
 }
 </script>
 
 <style>
     @import url('https://pro.fontawesome.com/releases/v5.10.0/css/all.css');
     @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+</style>
 
+<style lang="scss">
     html, body {
         font-family: 'Itim', cursive;
     }
@@ -36,26 +74,13 @@ export default {
         font-family: 'Itim', cursive;
     }
 
-    .todo_wrap {
-        padding:200px 0 200px;
-        text-align:center;
-        background:#f6f6f6;
-    }
-
-    button {
-        border-style:groove;
-    }
-
-    .shadow {
-        box-shadow: 5px 10px 10px rgba(0,0,0,0.03);
-    }
-    .list_note {
-        background:#FFF;
-        border:2px dashed #eb9a9a;
-        padding:20px 10px 0;
-        margin:18px;
-        height:62vh;
-
-        position:relative;
+    .todo {
+        width:100%;
+        padding:150px 25px;
+        background:#f3f3f3;
+        &_whole {
+            max-width:768px;
+            margin:0 auto;
+        }
     }
 </style>
