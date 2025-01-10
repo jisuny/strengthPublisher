@@ -1,0 +1,1 @@
+import{_ as a,c as n,a as o,o as s}from"./CjFYzKH9.js";const t={name:"IndexPage"};function c(r,e,p,d,l,i){return s(),n("div",null,e[0]||(e[0]=[o("h1",{class:"container h-[calc(100vh-450px)]"}," MAIN ",-1)]))}const f=a(t,[["render",c]]);export{f as default};
