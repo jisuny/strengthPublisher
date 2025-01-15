@@ -1,1 +1,0 @@
-import{_ as n,c as s,a as t,b as a,w as c,e as r,o as _,d}from"./CjFYzKH9.js";const l={name:"SubPage05"},i={class:"container h-[calc(100vh-450px)]"};function p(u,e,x,f,m,v){const o=r;return _(),s("div",null,[t("div",i,[e[1]||(e[1]=t("div",null,"SUB05",-1)),a(o,{to:"/"},{default:c(()=>e[0]||(e[0]=[d("Move to INDEX")])),_:1})])])}const N=n(l,[["render",p]]);export{N as default};
